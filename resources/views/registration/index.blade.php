@@ -7,22 +7,22 @@
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <x-card>
                 <x-card.body>
-                    <x-form>
+                    <x-form action="{{ route('registration.store') }}" method="POST">
                         <x-form.item>
                             <x-form.label>Ваше имя</x-form.label>
-                            <x-form.input name="first_name" placeholder="имя" autofocus></x-form.input>
+                            <x-form.text name="first_name" placeholder="имя" autofocus></x-form.text>
                         </x-form.item>
                         <x-form.item>
                             <x-form.label>Ваш email</x-form.label>
-                            <x-form.input name="email" placeholder="mail@example.com"></x-form.input>
+                            <x-form.text name="email" placeholder="mail@example.com"></x-form.text>
                         </x-form.item>
                         <x-form.item>
                             <x-form.label>Придумайте пароль</x-form.label>
-                            <x-form.input type="password" name="password" placeholder="*******"></x-form.input>
+                            <x-form.text type="password" name="password" placeholder="*******"></x-form.text>
                         </x-form.item>
                         <x-form.item>
                             <x-form.label>Повторите пароль</x-form.label>
-                            <x-form.input type="password" name="password_confirmation" placeholder="*******"></x-form.input>
+                            <x-form.text type="password" name="password_confirmation" placeholder="*******"></x-form.text>
                         </x-form.item>
                         <x-form.item>
                             <x-form.check name="agreement">Принимаю пользовательское соглашение</x-form.check>
