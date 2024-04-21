@@ -17,7 +17,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'first_name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email:filter', 'max:100', 'unique: users'],
+            'email' => ['required', 'string', 'email:filter', 'max:100', 'unique:users'],
             'password' => ['required', 'string', Password::defaults(), 'confirmed'],
             'agreement' => ['accepted'],
         ];
