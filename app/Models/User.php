@@ -12,6 +12,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
+        'online_at',
         'first_name',
         'middle_name',
         'last_name',
@@ -20,6 +21,7 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
+        'online_at' => 'datetime',
         'password' => 'hashed',
     ];
 
