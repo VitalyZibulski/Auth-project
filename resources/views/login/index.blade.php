@@ -7,7 +7,7 @@
             <x-form action="{{ route('login.store') }}" method="POST">
                 <x-form.item>
                     <x-form.label>Ваш email</x-form.label>
-                    <x-form.text name="email" placeholder="mail@example.com"></x-form.text>
+                    <x-form.text name="email" placeholder="mail@example.com" autofocus />
                 </x-form.item>
                 <x-form.item>
                     <x-form.label>Ваш пароль</x-form.label>
@@ -23,7 +23,7 @@
     <x-slot:crosslink>
         <div class="p-4 text-center text-sm text-gray-500">
             Нет аккаунта?
-            <x-link to="{{ route('registration') }}">
+            <x-link href="{{ route('registration') }}">
                 Зарегистрироваться
             </x-link>
         </div>

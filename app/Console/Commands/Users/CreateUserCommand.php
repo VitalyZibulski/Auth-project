@@ -11,7 +11,7 @@ class CreateUserCommand extends Command
 
     protected $description = 'Command description';
 
-    public function handle()
+    public function handle(): void
     {
         $user = new User();
         $user->first_name = $this->ask('Имя', 'Test');
