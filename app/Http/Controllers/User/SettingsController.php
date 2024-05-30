@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
-    public function index(Request $request)
+    /**
+     * @param Request $request
+     * @return Factory|Application|View|\Illuminate\Contracts\Foundation\Application
+     */
+    public function index(Request $request): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
         $user = $request->user();
 

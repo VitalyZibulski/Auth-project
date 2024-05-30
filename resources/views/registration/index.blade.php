@@ -31,7 +31,7 @@
     <x-slot:crosslink>
         <div class="p-4 text-center text-sm text-gray-500">
             Уже зарегистрированы?
-            <x-link to="{{ route('login') }}">
+            <x-link href="{{ route('login') }}">
                 Войти
             </x-link>
         </div>
