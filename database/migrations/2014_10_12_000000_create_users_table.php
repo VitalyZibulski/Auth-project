@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', static function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id()->from(1001);
             $table->timestamps();
             $table->timestamp('online_at')->nullable();
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('gender', 10)->nullable()->comment('Пол');
 
             $table->string('email')->unique();
+            $table->timestamp('email_confirmed_at')->nullable();
 
             $table->string('password');
             $table->timestamp('password_at')->nullable();
