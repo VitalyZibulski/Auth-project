@@ -4,28 +4,42 @@
     </x-slot:title>
     <x-card>
         <x-card.body>
-            <x-form action="{{ route('login.store') }}" method="POST">
+            <x-form action="{{ route('login.store') }}" method="post">
                 <x-form.item>
                     <x-form.label>Ваш email</x-form.label>
                     <x-form.text name="email" placeholder="mail@example.com" autofocus />
                 </x-form.item>
                 <x-form.item>
                     <x-form.label>Ваш пароль</x-form.label>
-                    <x-form.text type="password" name="password" placeholder="*******"></x-form.text>
+                    <x-form.text type="password" name="password" placeholder="*******" />
                 </x-form.item>
+
                 <x-form.item>
-                    <x-form.check name="remember">Запомнить меня</x-form.check>
+                    <div class="flex justify-between">
+                        <div>
+                            <x-form.check name="remember">
+                                Запомнить меня
+                            </x-form.check>
+                        </div>
+
+                        <div>
+                            <x-link href="{{ route('password') }}" class="text-sm">
+                                Забыли пароль?
+                            </x-link>
+                        </div>
+                    </div>
                 </x-form.item>
-                <x-button type="submit">Войти</x-button>
+
+                <x-button type="submit">
+                    Войти
+                </x-button>
             </x-form>
         </x-card.body>
     </x-card>
     <x-slot:crosslink>
-        <div class="p-4 text-center text-sm text-gray-500">
-            Нет аккаунта?
-            <x-link href="{{ route('registration') }}">
-                Зарегистрироваться
-            </x-link>
-        </div>
+        Нет аккаунта?
+        <x-link href="{{ route('registration') }}">
+            Зарегистрироваться
+        </x-link>
     </x-slot:crosslink>
 </x-layouts.auth>
