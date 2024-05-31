@@ -1,15 +1,19 @@
-<?php
+<<?php
 
-namespace App\Enums\Passwords;
+namespace App\Events\User;
 
-enum PasswordStatusEnum: string
+use App\Models\User;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Contracts\Events\ShouldDispatchAfterCommit;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class UserCreatedEvent implements ShouldDispatchAfterCommit
 {
-    case pending = 'pending';
-    case completed = 'completed';
-    case expired = 'expired';
+    use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public function is(PasswordStatusEnum $status): bool
-    {
-        return $this === $status;
+    public function __construct(
+        public User $user,
+    ) {
     }
 }

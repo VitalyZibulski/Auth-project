@@ -12,11 +12,9 @@ class ExpirePasswordsCommand extends Command
 
     public function handle()
     {
-        $this->warn('Просрачивание паролей...');
-
         $this->expirePasswords();
 
-        $this->info('Пароли просрачены.');
+        $this->info('Пароли заэкспайрены.');
     }
 
     private function expirePasswords(): void
